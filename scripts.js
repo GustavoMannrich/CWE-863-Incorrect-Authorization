@@ -6,7 +6,7 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    if(document.username !== "teste"){
+    if(document.cookie !== "username=teste"){
         if (filename !== "index.html")
             window.location.href = "index.html"
     }else{
@@ -21,7 +21,7 @@ function setCookie(){
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        document.username = "teste"
+        document.cookie = "username=teste"
     }
      
     changePage();
