@@ -5,25 +5,33 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
+    
+    
     if(document.cookie !== "logado=true"){
-        if (filename !== "index.html")
+        if (filename !== "index.html"){        
             document.cookie = "logado=false"
             window.location.href = "index.html"
+        }
     }else{
         if (filename !== "pagina1.html")
             window.location.href = "pagina1.html";
     }
 }
 
-function setCookie(){
-    debugger;
-    var cryptografia = SHA1("true");
+function logar(){
     var user = document.getElementsByName("user")[0].value;
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        document.cookie = "logado=" + cryptografia;
+        setCookie(true);
     }
+}
+
+
+function setCookie(x){
+    debugger;
+    var cryptografia = SHA1(x);
+    document.cookie = "logado=" + cryptografia;
      
     changePage();
 }
