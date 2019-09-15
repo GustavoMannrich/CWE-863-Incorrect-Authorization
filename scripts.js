@@ -15,7 +15,7 @@ function changePage(){
 
 function setCookie(){
     //debugger;
-    document.cookie = "username=teste" 
+    document.cookie.username = "teste" 
     changePage();
     alert(document.cookie);
 }
