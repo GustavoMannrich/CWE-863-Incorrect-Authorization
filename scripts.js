@@ -1,12 +1,11 @@
 window.onload = function(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    if (filename !== "pagina1.html")
-        changePage();    
+    changePage();    
 }
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    if(document.cookie !== "username=teste"){
+    if(document.username !== "teste"){
         if (filename !== "index.html")
             window.location.href = "index.html"
     }else{
@@ -21,7 +20,7 @@ function setCookie(){
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        document.cookie = "username=teste"
+        document.username = "teste"
     }
      
     changePage();
