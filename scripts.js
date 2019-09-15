@@ -4,7 +4,7 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    if(document.cookie.username !== "teste"){
+    if(document.username !== "teste"){
         if (filename !== "index.html")
             window.location.href = "index.html"
     }else{
@@ -15,7 +15,7 @@ function changePage(){
 
 function setCookie(){
     //debugger;
-    document.cookie.username = "teste" 
+    document.username = "teste" 
     changePage();
-    alert(document.cookie);
+    //alert(document.cookie);
 }
