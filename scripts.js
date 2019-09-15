@@ -16,7 +16,7 @@ function changePage(){
 }
 
 function setCookie(){
-    //debugger;
+    debugger;
     var user = document.getElementsByName("user")[0].value;
     var senha = document.getElementsByName("senha")[0].value;
 
