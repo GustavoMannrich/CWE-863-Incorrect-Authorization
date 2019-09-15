@@ -1,5 +1,7 @@
 window.onload = function(){
-    changePage();    
+    var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
+    if (filename !== "pagina1.html")
+        changePage();    
 }
 
 function changePage(){
@@ -15,7 +17,13 @@ function changePage(){
 
 function setCookie(){
     //debugger;
-    document.username = "teste" 
+    var user = document.getElementsByName("user")[0].value;
+    var senha = document.getElementsByName("senha")[0].value;
+
+    if ((user == "admin") && (senha == "admin")){
+        document.username = "teste"
+    }
+     
     changePage();
     //alert(document.cookie);
 }
