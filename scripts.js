@@ -24,5 +24,4 @@ function setCookie(){
     }
      
     changePage();
-    //alert(document.cookie);
 }
