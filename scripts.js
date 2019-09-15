@@ -5,8 +5,9 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    if(document.cookie !== "username=teste"){
+    if(document.cookie !== "logado=true"){
         if (filename !== "index.html")
+            document.cookie = "logado=false"
             window.location.href = "index.html"
     }else{
         if (filename !== "pagina1.html")
@@ -20,7 +21,7 @@ function setCookie(){
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        document.cookie = "username=teste"
+        document.cookie = "logado=true"
     }
      
     changePage();
