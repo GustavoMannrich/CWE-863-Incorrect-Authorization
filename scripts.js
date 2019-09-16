@@ -7,9 +7,10 @@ function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
     
     
-    if(document.cookie !== "logado=true"){
+    
+    if(document.cookie !== "logado="+SHA1("true")){
         if (filename !== "index.html"){        
-            document.cookie = "logado=false"
+            document.cookie = "logado=" + SHA1("false")
             window.location.href = "index.html"
         }
     }else{
@@ -23,17 +24,16 @@ function logar(){
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        setCookie(true);
+        
     }
 }
 
-
 function setCookie(x){
     debugger;
-    var cryptografia = SHA1(x);
-    document.cookie = "logado=" + cryptografia;
-     
-    changePage();
+    if (x !== undefined){
+        document.cookie = "logado=" + SHA1(x);;
+        changePage();
+    }
 }
 
 /**
