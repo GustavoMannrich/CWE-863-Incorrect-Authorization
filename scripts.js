@@ -24,7 +24,7 @@ function logar(){
     var senha = document.getElementsByName("senha")[0].value;
 
     if ((user == "admin") && (senha == "admin")){
-        
+        setCookie("true");
     }
 }
 
