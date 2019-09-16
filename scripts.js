@@ -28,6 +28,10 @@ function logar(){
     }
 }
 
+function deslogar(){
+    setCookie("false");
+}
+
 function setCookie(x){
     debugger;
     if (x !== undefined){
