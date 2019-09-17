@@ -13,7 +13,6 @@ function changePage(){
             document.cookie = "logado=" + SHA1("false");
             window.location.href = "index.html"
         }
-	}
     }else{
         if (filename !== "pagina1.html")
             window.location.href = "pagina1.html";
