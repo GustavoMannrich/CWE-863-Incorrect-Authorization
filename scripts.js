@@ -26,7 +26,7 @@ function changePage(){
 }
 
 function logar(){
-	var criptografado = (document.getElementsByName("criptografado")[0].value == "on");
+	criptografado = (document.getElementsByName("criptografado")[0].value == "on");
 	
     var user = document.getElementsByName("user")[0].value;
     var senha = document.getElementsByName("senha")[0].value;
