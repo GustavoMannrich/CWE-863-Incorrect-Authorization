@@ -8,17 +8,12 @@ window.onload = function(){
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
 
-    if(criptografado && (document.cookie !== "logado="+SHA1("true"))){
+    if(document.cookie !== "logado="+SHA1("true") && document.cookie !== "logado=true"){
         if (filename !== "index.html"){       
             document.cookie = "logado=" + SHA1("false");
             window.location.href = "index.html"
         }
 	}
-    if(!criptografado && (document.cookie !== "logado=true")){
-        if (filename !== "index.html"){       
-            document.cookie = "logado=false";
-            window.location.href = "index.html"
-        }	
     }else{
         if (filename !== "pagina1.html")
             window.location.href = "pagina1.html";
