@@ -12,6 +12,7 @@ function changePage(){
             document.cookie = "logado=" + SHA1("false");
             window.location.href = "index.html"
         }
+	}
     if(!criptografado && (document.cookie !== "logado=true")){
         if (filename !== "index.html"){       
             document.cookie = "logado=false";
