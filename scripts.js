@@ -1,4 +1,4 @@
-var criptografado = false;
+var criptografado;
 
 window.onload = function(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
