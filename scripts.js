@@ -5,14 +5,18 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
+    var criptografado = document.getElementsByName("criptografado")[0].value;    
     
-    
-    
-    if(document.cookie !== "logado="+SHA1("true")){
-        if (filename !== "index.html"){        
-            document.cookie = "logado=" + SHA1("false")
+    if(criptografado && (document.cookie !== "logado="+SHA1("true"))){
+        if (filename !== "index.html"){       
+            document.cookie = "logado=" + SHA1("false");
             window.location.href = "index.html"
         }
+    if(!criptografado && (document.cookie !== "logado=true")){
+        if (filename !== "index.html"){       
+            document.cookie = "logado=false";
+            window.location.href = "index.html"
+        }	
     }else{
         if (filename !== "pagina1.html")
             window.location.href = "pagina1.html";
@@ -33,10 +37,15 @@ function deslogar(){
 }
 
 function setCookie(x){
-    debugger;
+    var criptografado = document.getElementsByName("criptografado")[0].value;
+
     if (x !== undefined){
-        document.cookie = "logado=" + SHA1(x);;
-        changePage();
+        if (criptografado)
+	   document.cookie = "logado=" + SHA1(x);
+        else
+	   document.cookie = "logado=true";
+
+	changePage();
     }
 }
 
@@ -176,4 +185,4 @@ function SHA1(msg) {
     var temp = cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
    
     return temp.toLowerCase();
-   }
+}

@@ -1,4 +1,6 @@
 <!Doctype html>
+<script src="scripts.js"></script>
+
 <html>
     <head>
         <title>
@@ -6,11 +8,11 @@
         </title>
         <link href="styles.css" type="text/css" rel="stylesheet" />
         
-    </head>
+    </head>	
     <body>
         <h1>Tela de login</h1>
         <div >
-        <table style="color: yellow">
+        <table>
             <tr>
                 <td>
                     <label for="user">Usuário: </label>
@@ -27,10 +29,13 @@
                     <input name="senha" type="password">
                 </td>
             </tr>
+			<tr>
+				<td>
+                    <input name="tipo" type="checkbox">
+                </td>
+			</tr>
         </table>
             <button onclick="logar()">Logar</button>
         </div>
     </body>
 </html>
-
-<script src="scripts.js"></script>
