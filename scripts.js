@@ -45,7 +45,7 @@ function setCookie(x){
         if (criptografado)
 	   document.cookie = "logado=" + SHA1(x);
         else
-	   document.cookie = "logado=true";
+	   document.cookie = "logado=" + x;
 
 	changePage();
     }
