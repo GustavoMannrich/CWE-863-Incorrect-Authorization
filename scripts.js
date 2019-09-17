@@ -1,3 +1,5 @@
+var criptografado = false;
+
 window.onload = function(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
     changePage();    
@@ -5,8 +7,7 @@ window.onload = function(){
 
 function changePage(){
     var filename = window.location.href.substring(window.location.href.lastIndexOf('/')+1);
-    var criptografado = document.getElementsByName("criptografado")[0].value;    
-    
+
     if(criptografado && (document.cookie !== "logado="+SHA1("true"))){
         if (filename !== "index.html"){       
             document.cookie = "logado=" + SHA1("false");
@@ -25,6 +26,8 @@ function changePage(){
 }
 
 function logar(){
+	var criptografado = document.getElementsByName("criptografado")[0].value;
+	
     var user = document.getElementsByName("user")[0].value;
     var senha = document.getElementsByName("senha")[0].value;
 
@@ -38,8 +41,6 @@ function deslogar(){
 }
 
 function setCookie(x){
-    var criptografado = document.getElementsByName("criptografado")[0].value;
-
     if (x !== undefined){
         if (criptografado)
 	   document.cookie = "logado=" + SHA1(x);
